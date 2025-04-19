@@ -1,5 +1,5 @@
 const suits = ["hearts", "diamonds", "clubs", "spades"];
-const values = ["ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king"];
+const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 
 let deck = [];
 let currentCard = null;
@@ -22,7 +22,7 @@ function createDeck() {
     deck = [];
     for (let suit of suits) {
         for (let value of values) {
-            deck.push(`${value}_of_${suit}`);
+            deck.push(`${value}${suit}`);
         }
     }
 }
@@ -33,11 +33,13 @@ function shuffleDeck() {
         [deck[i], deck[j]] = [deck[j], deck[i]];
     }
 }
-
-function dealCard() {
-    if (deck.length === 0) {
-        alert("No more cards to deal!");
-        return
+//Unshuffled deck reation
+function makeDeck() {
+    deck = [];
+    for (let suit of suits) {
+      for (let value of values) {
+        deck.push(`${value}${suit}`); // ''10H', 'QS''
+      }
     }
   }
 
@@ -75,4 +77,10 @@ document.getElementById("deal").addEventListener("click", () => {
     rightCard.querySelector(".front").style.backgroundColor = "goldenrods";
     rightCard.querySelector(".front").textContent = "🂡"; 
   });
+});
+
+// Flip Card
+flipBtn.addEventListener('click', () => {
+  const flipCard = document.getElementById('flip-card');
+  flipCard.classList.toggle('flip');
 });
