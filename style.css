@@ -1,25 +1,27 @@
+/* Global page styles */
 body {
-  background-color: green;
+  font-family: Arial, sans-serif;
   margin: 0;
-  height: 100vh;
-  overflow: hidden;
+  padding: 20px;
+  background-color: #2e7d32;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* Main container (if you use a .main wrapper) */
 .main {
   height: 100%;
   position: relative;
 }
 
-button {
-  top: 60%;
-  left: 45%;
-  position: absolute;
-}
-
+/* Utility classes */
 .clicked {
   display: none;
 }
 
+/* Card back positioning (stack/reset animation) */
 .card_back {
   width: 10%;
   height: auto;
@@ -31,7 +33,105 @@ button {
   transition: top 1s ease, transform 1s ease;
 }
 
+/* Move‑to‑center helper (used after shuffle) */
 .move-to-center {
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* Main element styling */
+main {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Page title */
+h1 {
+  color: white;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Control bar at bottom */
+.controls {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+/* Shared button styles */
+#shuffleDeck,
+#flipAll,
+#resetDeck {
+  padding: 15px 30px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  min-width: 150px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+/* Individual button colors */
+#shuffleDeck {
+  background-color: #4CAF50;
+}
+#flipAll {
+  background-color: #2196F3;
+}
+#resetDeck {
+  background-color: #f44336;
+}
+
+/* Hover effects */
+#shuffleDeck:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+}
+#flipAll:hover {
+  background-color: #1976D2;
+  transform: translateY(-2px);
+}
+#resetDeck:hover {
+  background-color: #d32f2f;
+  transform: translateY(-2px);
+}
+
+/* Deck container (if you wrap #deck in .deck-container) */
+.deck-container {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  margin-bottom: 100px;
 }
