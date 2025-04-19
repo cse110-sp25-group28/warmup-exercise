@@ -7,16 +7,21 @@ assignees: ''
 
 ---
 
-## Task 
+**Issue**: [Short, descriptive title]
 
-> _Summary of what needs to be done._
+**Description**
+A concise summary of what component or logic needs building.
 
-___
+**Acceptance Criteria**
+- [ ] 
+- [ ] 
+- [ ] 
 
-## Acceptance Criteria
-- [ ] _First "done" condition_
-- [ ] _Second "done" condition_
-- [ ] _Third "done" condition_
+**Tasks**
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
 
-## Details & Additional Information
-> _Any extra info, links, etc._
+**Additional Context**
+Include links to design mockups, screenshots, or spec docs.
