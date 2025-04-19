@@ -39,7 +39,6 @@ function dealCard() {
         alert("No more cards to deal!");
         return
     }
-<<<<<<< HEAD
   }
 
 // Shuffle Card Animation
@@ -77,8 +76,3 @@ document.getElementById("deal").addEventListener("click", () => {
     rightCard.querySelector(".front").textContent = "🂡"; 
   });
 });
-=======
-    currentCard = deck.pop();
-    const cardpng = `images/${currentCard}.png`;
-}
->>>>>>> 01f2619aab2663a33ddfa9280b3d41ee3f43fbb8
