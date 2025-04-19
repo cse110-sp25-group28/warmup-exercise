@@ -2,12 +2,37 @@ const suits = ["hearts", "diamonds", "clubs", "spades"];
 const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 
 let deck = [];
-let cards_dealt = [];
-let dealtCount = 0;
+let currentCard = null;
 
-let isShuffling = false;
-let isDealing = false;
+const dealBtn = document.getElementById('deal');
 const shuffleBtn = document.getElementById('shuffle');
+const flipBtn = document.getElementById('flip');
+
+const dealtCard = document.querySelectorAll('.card')[0];
+const showCard = document.querySelectorAll('.card')[1];
+
+const dealtFront = dealtCard.querySelector('.front');
+const dealtBack = dealtCard.querySelector('.back');
+
+const showFront = showCard.querySelector('.front');
+const showBack = showCard.querySelector('.back');
+
+//Unshuffled deck reation
+function createDeck() {
+    deck = [];
+    for (let suit of suits) {
+        for (let value of values) {
+            deck.push(`${value}${suit}`);
+        }
+    }
+}
+
+function shuffleDeck() {
+    for (let i = deck.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [deck[i], deck[j]] = [deck[j], deck[i]];
+    }
+}
 //Unshuffled deck reation
 function makeDeck() {
     deck = [];
