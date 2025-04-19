@@ -74,7 +74,7 @@ document.getElementById("deal").addEventListener("click", () => {
   flyingCard.addEventListener("animationend", () => {
     flyingCard.remove();
 
-    rightCard.querySelector(".front").style.backgroundColor = "goldenrod";
+    rightCard.querySelector(".front").style.backgroundColor = "goldenrods";
     rightCard.querySelector(".front").textContent = "🂡"; 
   });
 });
