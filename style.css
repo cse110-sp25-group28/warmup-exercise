@@ -106,12 +106,12 @@
       opacity: 1;
     }
     100% {
-      transform: translate(300px, 0) rotate(0);
+      transform: translate(480px, 0) rotate(0);
       opacity: 1;
     }
   }
   
   .deal-animation {
-    animation: dealCard 0.5s ease-out forwards;
+    animation: dealCard 0.65s ease-out forwards;
     pointer-events: none;
   }
