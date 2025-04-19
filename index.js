@@ -78,3 +78,9 @@ document.getElementById("deal").addEventListener("click", () => {
     rightCard.querySelector(".front").textContent = "🂡"; 
   });
 });
+
+// Flip Card
+flipBtn.addEventListener('click', () => {
+  const flipCard = document.getElementById('flip-card');
+  flipCard.classList.toggle('flip');
+});
