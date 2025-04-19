@@ -33,7 +33,7 @@ function shuffleDeck() {
         [deck[i], deck[j]] = [deck[j], deck[i]];
     }
 }
-//Unshuffled deck reation
+//Unshuffled deck creation
 function makeDeck() {
     deck = [];
     for (let suit of suits) {
