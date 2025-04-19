@@ -1,1 +1,37 @@
+body {
+  background-color: green;
+  margin: 0;
+  height: 100vh;
+  overflow: hidden;
+}
 
+.main {
+  height: 100%;
+  position: relative;
+}
+
+button {
+  top: 60%;
+  left: 45%;
+  position: absolute;
+}
+
+.clicked {
+  display: none;
+}
+
+.card_back {
+  width: 10%;
+  height: auto;
+  max-width: 500px;
+  position: absolute;
+  top: 0; /* Top of page */
+  left: 50%;
+  transform: translateX(-50%);
+  transition: top 1s ease, transform 1s ease;
+}
+
+.move-to-center {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
