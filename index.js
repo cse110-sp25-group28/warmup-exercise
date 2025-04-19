@@ -8,6 +8,15 @@ const dealBtn = document.getElementById('deal');
 const shuffleBtn = document.getElementById('shuffle');
 const flipBtn = document.getElementById('flip');
 
+const dealtCard = document.querySelectorAll('.card')[0];
+const showCard = document.querySelectorAll('.card')[1];
+
+const dealtFront = dealtCard.querySelector('.front');
+const dealtBack = dealtCard.querySelector('.back');
+
+const showFront = showCard.querySelector('.front');
+const showBack = showCard.querySelector('.back');
+
 //Unshuffled deck reation
 function createDeck() {
     deck = [];
