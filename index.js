@@ -8,6 +8,7 @@ const values = [
 let deck = [];
 let lastDealtCard = null;
 let firstCardDealt = false;
+let zIndexCounter = 1;
 
 // Initialize the deck with all 52 cards
 function initializeDeck() {
@@ -198,7 +199,7 @@ function performDealAnimation(nextCard) {
   // Remove any existing animation classes
   card.classList.remove('shuffle-animation');
   card.classList.remove('deal-animation');
-  
+  card.style.zIndex = zIndexCounter++;
   // Force reflow
   void card.offsetWidth;
   
