@@ -1,1 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: sans-serif;
+  background-color: #004f29;
+}
+
+main {
+  margin: 1rem;
+}
+
+.card-layout {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 900px;
+  padding: 2rem;
+  align-items: flex-start;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  flex: 1;
+  min-height: 600px;
+}  
+
+.container, .card {
+  width: 350px;
+  height: 500px;
+  position: relative;
+}
+
+.card {
+  border-radius: 2rem;
+  overflow: hidden;
+  background-color: #f3f3f3;
+  margin-bottom: 1rem;
+}
+
+.front, .back {
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}  
+
+.back {
+  background-image: url('images/PNG-cards-1.3/10_of_clubs.png');
+  border: 2px solid red;
+  background-size: cover;
+  background-position: center;
+}
+
+.front {
+  background-image: url('https://opengameart.org/sites/default/files/card%20back%20red.png');
+  border: 2px solid black;
+  background-size: cover;
+  background-position: center;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: auto;
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 1rem;
+  background-color: #4f46e5;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin-top: auto;
+}
+
+button:hover {
+  background-color: #4338ca;
+  transform: translateY(-2px);
+}
+
+button:active {
+  background-color: #3730a3;
+  transform: translateY(0);
+}
+
+@keyframes shuffle {
+  0% { transform: translateX(0) rotate(0); }
+  25% { transform: translateX(-20px) rotate(-5deg); }
+  50% { transform: translateX(20px) rotate(5deg); }
+  75% { transform: translateX(-10px) rotate(-2deg); }
+  100% { transform: translateX(0) rotate(0); }
+}
+
+.shuffle-animation {
+  animation: shuffle 0.6s ease-in-out;
+}
+
+@keyframes dealCard {
+  0% {
+    transform: translate(0, 0) rotate(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(410px, 0) rotate(0);
+    opacity: 1;
+  }
+}
+
+.deal-animation {
+  animation: dealCard 0.4s ease-out forwards;
+  pointer-events: none;
+}
+
+.card-flip {
+  perspective: 1000px;
+  width: 350px;
+  height: 500px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.card-flip.flip .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card.front, .card.back {
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card.back {
+  transform: rotateY(180deg);
+  background-color: #f3f3f3;
+}
+
+.card, .card-flip {
+  height: 500px;
+  width: 350px;
+}
